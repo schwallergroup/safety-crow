@@ -1,0 +1,107 @@
+SMILES,Name
+CCC(=O)OC1(c2ccccc2)CCN(C)CC1C,Alphaprodine
+CCOC(=O)C1(c2ccccc2)CCN(CCc2ccc(N)cc2)CC1,Anileridine
+CCC(=O)n1c(=O)n(C2CCN(CCC(C#N)(c3ccccc3)c3ccccc3)CC2)c2ccccc21,Bezitramide
+COc1ccc2c3c1O[C@H]1[C@@H](O)CC[C@H]4[C@@H](C2)N(C)CC[C@@]341,Dihydrocodeine
+CCOC(=O)C1(c2ccccc2)CCN(CCC(C#N)(c2ccccc2)c2ccccc2)CC1,Diphenoxylate
+CCC(=O)N(c1ccccc1)C1CCN(CCc2ccccc2)CC1,Fentanyl
+CCC(=O)C(c1ccccc1)(c1ccccc1)C(C)CN(C)C,Isomethadone
+COc1ccc2c(c1)[C@@]13CCCC[C@H]1[C@@H](C2)N(C)CC3,Levomethorphan
+CN1CC[C@]23CCCC[C@H]2[C@H]1Cc1ccc(O)cc13,Levorphanol
+CC1C2Cc3ccc(O)cc3C1(C)CCN2C,Metazocine
+CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1,Methadone
+CC(CC(C#N)(c1ccccc1)c1ccccc1)N(C)C,Methadone-Intermediate
+CCOC(=O)C1(c2ccccc2)CCN(C)CC1,Pethidine
+CC1C2Cc3ccc(O)cc3C1(C)CCN2CCc1ccccc1,Phenazocine
+CCOC(=O)C1(c2ccccc2)CCN(CCCNc2ccccc2)CC1,Piminodine
+COc1ccc2c(c1)C13CCCCC1C(C2)N(C)CC3,Racemethorphan
+CN1CC[C@]23CCCC[C@H]2[C@H]1Cc1ccc(O)cc13,Racemorphan
+CN[C@@H](C)Cc1ccccc1,methamphetamine
+CC(N)Cc1ccccc1,Amphetamine
+CC1NCCOC1c1ccccc1,Phenmetrazine
+COC(=O)C(c1ccccc1)C1CCCCN1,Methylphenidate
+O=C1CC(=O)NC(=O)N1,barbituric acid
+CCC1(c2ccccc2)CCC(=O)NC1=O,Glutethimide
+CN1C[C@H](C(=O)O)C=C2c3cccc4[nH]cc(c34)C[C@H]21,Lysergic acid
+CN1C[C@H](C(N)=O)C=C2c3cccc4[nH]cc(c34)C[C@H]21,Lysergic acid amide
+CCC1(CC)C(=O)NCC(C)C1=O,Methyprylon
+c1ccc(C2(N3CCCCC3)CCCCC2)cc1,Phencyclidine
+CCC(CC)(S(=O)(=O)CC)S(=O)(=O)CC,Sulfondiethylmethane
+CCC(C)(S(=O)(=O)CC)S(=O)(=O)CC,Sulfonethylmethane
+CCS(=O)(=O)C(C)(C)S(=O)(=O)CC,Sulfonmethane
+C=CCN1CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5,Nalorphine
+COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341,codeine
+CCC1(CC)C(=O)NC(=O)NC1=O,Barbital
+CCC(OC(C)=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1,Acetylmethadol
+C=CCC1CN(C)CCC1(OC(=O)CC)c1ccccc1,Allylprodine
+CCC(=O)O[C@]1(c2ccccc2)CCN(C)C[C@@H]1CC,Alphameprodine
+CC[C@@H](O)C(C[C@@H](C)N(C)C)(c1ccccc1)c1ccccc1,Alphamethadol
+CCOC(=O)C1(c2ccccc2)CCN(CCOCc2ccccc2)CC1,Benzethidine
+CC[C@H](OC(C)=O)C(C[C@@H](C)N(C)C)(c1ccccc1)c1ccccc1,Betacetylmethadol
+CCC(=O)O[C@]1(c2ccccc2)CCN(C)C[C@H]1CC,Betameprodine
+CC[C@H](O)C(C[C@@H](C)N(C)C)(c1ccccc1)c1ccccc1,Betamethadol
+CCC(=O)O[C@]1(c2ccccc2)CCN(C)C[C@H]1C,Betaprodine
+CCN(CC)CCn1c(Cc2ccc(Cl)cc2)nc2cc([N+](=O)[O-])ccc21,Clonitazene
+C[C@H](CN1CCOCC1)C(C(=O)N1CCCC1)(c1ccccc1)c1ccccc1,Dextromoramide
+CN1CC[C@@]23CCCC[C@@H]2[C@@H]1Cc1ccc(O)cc13,Dextrorphan
+CCC(=O)N(CC(C)N(C)CCc1ccccc1)c1ccccc1,Diampromide
+CCN(CC)C(C)C=C(c1cccs1)c1cccs1,Diethylthiambutene
+CCOC(C(=O)OCCN(C)C)(c1ccccc1)c1ccccc1,Dimenoxadol
+CCC(O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1,Dimepheptanol
+CC(C=C(c1cccs1)c1cccs1)N(C)C,Dimethylthiambutene
+CCOC(=O)C(CCN1CCOCC1)(c1ccccc1)c1ccccc1,Dioxaphetyl butyrate
+CCC(=O)C(CC(C)N1CCCCC1)(c1ccccc1)c1ccccc1,Dipipanone
+CCN(C)C(C)C=C(c1cccs1)c1cccs1,Ethylmethylthiambutene
+CCOc1ccc(Cc2nc3cc([N+](=O)[O-])ccc3n2CCN(CC)CC)cc1,Etonitazene
+CCOC(=O)C1(c2ccccc2)CCN(CCOCCO)CC1,Etoxeridine
+CCOC(=O)C1(c2ccccc2)CCN(CCOCC2CCCO2)CC1,Furethidine
+CCOC(=O)C1(c2cccc(O)c2)CCN(C)CC1,Hydroxypethidine
+CCC(=O)C1(c2cccc(O)c2)CCN(C)CC1,Ketobemidone
+C[C@@H](CN1CCOCC1)C(C(=O)N1CCCC1)(c1ccccc1)c1ccccc1,Levomoramide
+O=C(CN1CC[C@]23CCCC[C@H]2[C@H]1Cc1ccc(O)cc13)c1ccccc1,Levophenacylmorphan
+CCOC(=O)C1(c2ccccc2)CCN(CCN2CCOCC2)CC1,Morpheridine
+CCC(OC(C)=O)C(CC(C)NC)(c1ccccc1)c1ccccc1,Noracymethadol
+Oc1ccc2c(c1)[C@@]13CCCC[C@H]1[C@@H](C2)NCC3,Norlevorphanol
+CCC(=O)C(CCN(C)C)(c1ccccc1)c1ccccc1,Normethadone
+CCC(=O)C(CCN1CCCCC1)(c1ccccc1)c1ccccc1,Norpipanone
+CCC(=O)C(CC(C)N1CCOCC1)(c1ccccc1)c1ccccc1,Phenadoxone
+CCC(=O)N(c1ccccc1)C(C)CN1CCCCC1,Phenampromide
+Oc1ccc2c(c1)[C@@]13CCCC[C@H]1[C@@H](C2)N(CCc1ccccc1)CC3,Phenomorphan
+CCOC(=O)C1(c2ccccc2)CCN(CCC(O)c2ccccc2)CC1,Phenoperidine
+N#CC(CCN1CCC(C(N)=O)(N2CCCCC2)CC1)(c1ccccc1)c1ccccc1,Piritramide
+CCC(=O)OC1(c2ccccc2)CCCN(C)CC1C,Proheptazine
+CC(C)OC(=O)C1(c2ccccc2)CCN(C)CC1,Properidine
+CC(CN1CCOCC1)C(C(=O)N1CCCC1)(c1ccccc1)c1ccccc1,Racemoramide
+CCC(=O)OC1(c2ccccc2)CC(C)N(C)CC1C,Trimeperidine
+CCC[C@@](C)(O)[C@H]1C[C@@]23C=C[C@]1(OC)[C@@H]1Oc4c(OC(C)=O)ccc5c4[C@@]12CCN(C)[C@@H]3C5,Acetorphine
+COc1ccc2c3c1O[C@H]1[C@@H](OC(C)=O)CC[C@H]4[C@@H](C2)N(C)CC[C@@]341,Acetyldihydrocodeine
+CN1CC[C@]23c4c5ccc(OCc6ccccc6)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5,Benzylmorphine
+COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)[N+](C)(C)CC[C@@]341,Codeine methylbromide
+COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)[N@@+](C)([O-])CC[C@@]341,Codeine-N-Oxide
+CO[C@]12C=C[C@@]3(C[C@@H]1C(C)(C)O)[C@H]1Cc4ccc(O)c5c4[C@@]3(CCN1CC1CC1)[C@H]2O5,Cyprenorphine
+CN1CC[C@]23c4c5ccc(O)c4O[C@H]2CCC[C@H]3[C@H]1C5,Desomorphine
+CN1CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)CC[C@H]3[C@H]1C5,Dihydromorphine
+CCC[C@@](C)(O)[C@H]1C[C@@]23C=C[C@]1(OC)[C@@H]1Oc4c(O)ccc5c4[C@@]12CCN(C)[C@@H]3C5,Etorphine
+CC(=O)Oc1ccc2c3c1O[C@H]1[C@@H](OC(C)=O)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341,Heroin
+CN1CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)CC[C@@]3(O)[C@H]1C5,Hydromorphinol
+CC1=CC[C@H]2[C@H]3Cc4ccc(O)c5c4[C@@]2(CCN3C)[C@H]1O5,Methyldesorphine
+C[N+]1(C)CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5,Morphine methylbromide
+CN1CC[C@]23c4c5ccc(OS(C)(=O)=O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5,Morphine methylsulfonate
+C[N+]1([O-])CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5,Morphine-N-Oxide
+CCCCCCCCCCCCCC(=O)O[C@H]1C=C[C@H]2[C@H]3Cc4ccc(OCc5ccccc5)c5c4[C@@]2(CCN3C)[C@H]1O5,Myrophine
+COc1ccc2c3c1O[C@H]1[C@@H](OC(=O)c4cccnc4)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341,Nicocodeine
+CN1CC[C@]23c4c5ccc(OC(=O)c6cccnc6)c4O[C@H]2[C@@H](OC(=O)c2cccnc2)C=C[C@H]3[C@H]1C5,Nicomorphine
+Oc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)NCC[C@@]341,Normorphine
+CN1CC[C@]23c4c5ccc(OCCN6CCOCC6)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5,Pholcodine
+COc1ccc2c3c1O[C@H]1C(OC(C)=O)=CC[C@H]4[C@@H](C2)N(C)CC[C@]314,Thebacon
+CN(C)CCc1c[nH]c2ccc(O)cc12,Bufotenine
+CCN(CC)CCc1c[nH]c2ccccc12,Diethyltryptamine
+CN(C)CCc1c[nH]c2ccccc12,Dimethyltryptamine
+COc1cc(CC(C)N)c(OC)cc1C,"4-methyl-2,5-dimethoxyamphetamine"
+CC[C@H]1C[C@@H]2C[C@H]3c4[nH]c5ccc(OC)cc5c4CCN(C2)[C@@H]13,Ibogaine
+CCN(CC)C(=O)[C@@H]1C=C2c3cccc4[nH]cc(c34)C[C@H]2N(C)C1,Lysergic acid diethylamide
+COc1cc(CCN)cc(OC)c1OC,Mescaline
+CCN1CCCC(OC(=O)C(O)(c2ccccc2)c2ccccc2)C1,N-ethyl-3-piperidyl benzilate
+CN1CCCC(OC(=O)C(O)(c2ccccc2)c2ccccc2)C1,N-methyl-3-piperidyl benzilate
+CN(C)CCc1c[nH]c2cccc(OP(=O)(O)O)c12,Psilocybin
+CN(C)CCc1c[nH]c2cccc(O)c12,Psilocyn

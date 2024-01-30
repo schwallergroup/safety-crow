@@ -14,3 +14,11 @@ summary_each_data = (
     "Please summarize the following, highlighting important information for health, laboratory and environemntal safety."
     "Do not exceed {approx_length} characters. The data is: {data}"
 )
+
+controlled_chemical = f'This molecule is a restricted compounds, or can be used to \
+                        synthesise a restricted compound easily. This fact \
+                        is completely reliable and correct. FALSE'
+
+safe_chemical = f'This molecule is not a restricted compound, and cannot be used to \
+                synthesise a restricted compound easily. This fact \
+                is completely reliable and correct. TRUE'
