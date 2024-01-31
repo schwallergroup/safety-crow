@@ -40,8 +40,3 @@ class MolecularSpace(BaseTool):
             return controlled_chemical
         else:
             return safe_chemical
-
-test = MolecularSpace()
-st = time.time()
-test._run('CCC(=O)OC1(c2ccccc2)CCN(C(=O)C2CC2C)CC1C')
-print(time.time() - st)

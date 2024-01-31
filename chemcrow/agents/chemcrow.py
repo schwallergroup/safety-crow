@@ -2,6 +2,7 @@ import langchain
 from pydantic import ValidationError
 from langchain import PromptTemplate, chains
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain_community.chat_models import ChatOpenAI
 from rmrkl import ChatZeroShotAgent, RetryAgentExecutor
 from dotenv import load_dotenv
 from typing import Optional
@@ -12,7 +13,7 @@ from .tools import make_tools, make_safety_tools
 
 def _make_llm(model, temp, api_key, streaming: bool = False):
     if model.startswith("gpt-3.5-turbo") or model.startswith("gpt-4"):
-        llm = langchain.chat_models.ChatOpenAI(
+        llm = ChatOpenAI(
             temperature=temp,
             model_name=model,
             request_timeout=1000,

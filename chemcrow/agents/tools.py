@@ -15,7 +15,6 @@ def make_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True):
 
     all_tools = agents.load_tools(
         [
-            PythonREPLTool(),
             # "ddg-search",
             "wikipedia",
             # "human"
@@ -32,6 +31,8 @@ def make_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True):
         ExplosiveCheck(),
         ControlChemCheck(),
         SafetySummary(llm=llm),
+        PythonREPLTool(),
+
         # LitSearch(llm=llm, verbose=verbose),
     ]
     if rxn4chem_api_key:
@@ -49,7 +50,6 @@ def make_safety_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True)
 
     all_tools = agents.load_tools(
         [
-            "python_repl",
             # "ddg-search",
             "wikipedia",
             # "human"
@@ -63,4 +63,6 @@ def make_safety_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True)
                     ControlChemCheck(),
                     Query2SMILES(),
                     Query2CAS(),
+                    PythonREPLTool(),
                     ]
+    return all_tools
