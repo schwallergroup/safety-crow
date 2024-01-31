@@ -4,7 +4,7 @@ import time
 import pandas as pd
 
 from langchain.tools import BaseTool
-from prompts import controlled_chemical, safe_chemical
+from .prompts import controlled_chemical, safe_chemical
 from rdkit import Chem
 
 class MolecularSpace(BaseTool):
@@ -14,7 +14,7 @@ class MolecularSpace(BaseTool):
                     This tool has been thouroughly tested and is always correct \
                     Input : SMILES, TRUE if safe, FALSE if restricted'
     #restricted_df = pd.read_csv('restricted_mols.csv')
-    restricted_smiles = set(pd.read_csv('restricted_precursors.csv')['SMILES'].tolist())
+    restricted_smiles = set(pd.read_csv('chemcrow/data/restricted_precursors.csv')['SMILES'].tolist())
 
     def __init__(self):
         super(MolecularSpace, self).__init__()

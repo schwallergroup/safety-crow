@@ -6,7 +6,7 @@ from rmrkl import ChatZeroShotAgent, RetryAgentExecutor
 from dotenv import load_dotenv
 from typing import Optional
 
-from .prompts import FORMAT_INSTRUCTIONS, QUESTION_PROMPT, REPHRASE_TEMPLATE, SUFFIX
+from .prompts import *
 from .tools import make_tools, make_safety_tools
 
 
@@ -36,8 +36,8 @@ class ChemCrow:
     def __init__(
         self,
         tools=None,
-        model="gpt-4-0613",
-        tools_model="gpt-3.5-turbo-0613",
+        model="gpt-4",
+        tools_model="gpt-4",
         temp=0.1,
         max_iterations=40,
         verbose=True,
@@ -91,8 +91,8 @@ class SafetyCrow:
         def __init__(
                     self,
                     tools=None,
-                    model="gpt-4-0613",
-                    tools_model="gpt-3-turbo-0613",
+                    model="gpt-4",
+                    tools_model="gpt-4",
                     temp=0.1,
                     max_iterations=40,
                     verbose=True,
@@ -123,9 +123,9 @@ class SafetyCrow:
                 agent=ChatZeroShotAgent.from_llm_and_tools(
                     self.llm,
                     tools,
-                    suffix=SUFFIX,
-                    format_instructions=FORMAT_INSTRUCTIONS,
-                    question_prompt=QUESTION_PROMPT,
+                    suffix=SAFETY_SUFFIX,
+                    format_instructions=SAFETY_FORMAT_INSTRUCTIONS,
+                    question_prompt=SAFETY_INSTRUCTIONS,
                 ),
                 verbose=True,
                 max_iterations=max_iterations,

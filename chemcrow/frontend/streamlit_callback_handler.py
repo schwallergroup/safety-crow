@@ -10,7 +10,7 @@ from langchain.callbacks.streamlit.streamlit_callback_handler import (
     StreamlitCallbackHandler,
     ToolRecord,
 )
-from langchain_core.schema import AgentAction, AgentFinish, LLMResult
+from langchain.schema import AgentAction, AgentFinish, LLMResult
 from streamlit.delta_generator import DeltaGenerator
 
 from chemcrow.utils import is_smiles

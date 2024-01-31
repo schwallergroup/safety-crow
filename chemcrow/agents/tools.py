@@ -2,6 +2,8 @@ import os
 
 from langchain import agents
 from langchain.base_language import BaseLanguageModel
+from langchain.utilities import PythonREPL
+from langchain_experimental.tools import PythonREPLTool
 
 from chemcrow.tools import *
 
@@ -13,7 +15,7 @@ def make_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True):
 
     all_tools = agents.load_tools(
         [
-            "python_repl",
+            PythonREPLTool(),
             # "ddg-search",
             "wikipedia",
             # "human"
