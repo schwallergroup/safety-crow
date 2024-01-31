@@ -39,3 +39,26 @@ def make_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True):
         ]
 
     return all_tools
+
+def make_safety_tools(llm: BaseLanguageModel, api_keys: dict = {}, verbose=True):
+
+    serp_key = api_keys.get("SERP_API_KEY") or os.getenv("SERP_API_KEY")
+    openai_api_key = api_keys.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+
+    all_tools = agents.load_tools(
+        [
+            "python_repl",
+            # "ddg-search",
+            "wikipedia",
+            # "human"
+        ]
+    )
+    
+    all_tools +=    [
+                    MolecularSpace(),
+                    SafetySummary(llm=llm),
+                    ExplosiveCheck(),
+                    ControlChemCheck(),
+                    Query2SMILES(),
+                    Query2CAS(),
+                    ]

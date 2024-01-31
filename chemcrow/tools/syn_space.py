@@ -12,7 +12,7 @@ class MolecularSpace(BaseTool):
     description = 'This is a tool to check if a given Molecular SMILES is a restricted compound \
                     or can be used to synthesise a restricted compound easily. \
                     This tool has been thouroughly tested and is always correct \
-                    Input : SMILES'
+                    Input : SMILES, TRUE if safe, FALSE if restricted'
     #restricted_df = pd.read_csv('restricted_mols.csv')
     restricted_smiles = set(pd.read_csv('restricted_precursors.csv')['SMILES'].tolist())
 

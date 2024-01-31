@@ -1,4 +1,4 @@
-from .chemcrow import ChemCrow
-from .tools import make_tools
+from .chemcrow import ChemCrow, SafetyCrow
+from .tools import make_tools, make_safety_tools
 
-__all__ = ["ChemCrow", "make_tools"]
+__all__ = ["ChemCrow","SafetyCrow", "make_tools", "make_safety_tools"]
