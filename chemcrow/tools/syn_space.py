@@ -4,7 +4,7 @@ import time
 import pandas as pd
 
 from langchain.tools import BaseTool
-from .prompts import controlled_chemical, safe_chemical
+from .prompts import controlled_chemical, safe_chemical, controlled_chem_error
 from rdkit import Chem
 
 class MolecularSpace(BaseTool):
@@ -30,13 +30,18 @@ class MolecularSpace(BaseTool):
             mols, prop = synspace.chemical_space(smi)
             for mol in mols:
                 restricted_precursors = restricted_precursors.append({'SMILES': Chem.MolToSmiles(mol)}, ignore_index=True)
+            restricted_precursors = restricted_precursors.append({'SMILES': smi}, ignore_index=True)
         restricted_precursors.to_csv('restricted_precursors.csv', index=False)
 
     def _run(self, query : str) -> (str, bool):
         """
         Returns both natural language response for the agent and boolean for programmatic use
         """
-        if query in self.restricted_smiles:
-            return controlled_chemical
-        else:
+        try:
+            mols, prop = synspace.chemical_space(query)
+
+            if any([Chem.MolToSmiles(mol) in self.restricted_smiles for mol in mols]):
+                return controlled_chemical
             return safe_chemical
+        except:
+            return controlled_chem_error

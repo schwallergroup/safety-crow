@@ -22,3 +22,5 @@ controlled_chemical = f'This molecule is a restricted compounds, or can be used 
 safe_chemical = f'This molecule is not a restricted compound, and cannot be used to \
                 synthesise a restricted compound easily. This fact \
                 is completely reliable and correct. TRUE'
+
+controlled_chem_error = f'The function returned an error, assume the compound is unsafe, FALSE'

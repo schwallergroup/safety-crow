@@ -23,15 +23,15 @@ class Query2SMILES(BaseTool):
         """This function queries the given molecule name and returns a SMILES string from the record"""
         """Useful to get the SMILES string of one molecule by searching the name of a molecule. Only query with one specific name."""
 
-        # query the PubChem database
-        r = requests.get(self.url.format(query, "property/IsomericSMILES/JSON"))
-        # convert the response to a json object
-        data = r.json()
-        # return the SMILES string
         try:
+        # query the PubChem database
+            r = requests.get(self.url.format(query, "property/IsomericSMILES/JSON"))
+        # convert the response to a json object
+            data = r.json()
+        # return the SMILES string
             smi = data["PropertyTable"]["Properties"][0]["IsomericSMILES"]
-        except KeyError:
-            return "Could not find a molecule matching the text. One possible cause is that the input is incorrect, input one molecule at a time."
+        except:
+            return "Could not find a molecule matching the text. One possible cause is that the input is incorrect, input one molecule at a time. The tool may have returned an error"
         # remove salts
         return Chem.CanonSmiles(largest_mol(smi))
 

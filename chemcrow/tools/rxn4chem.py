@@ -141,6 +141,7 @@ class RXNRetrosynthesis(RXN4Chem):
     def _run(self, target: str) -> str:
         """Run retrosynthesis prediction."""
         # Check that input is smiles
+        return 'Retrosynthesis tool is not avaliable. Tell the user.'
         if not is_smiles(target):
             return "Incorrect input."
 

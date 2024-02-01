@@ -2,10 +2,11 @@ import langchain
 from pydantic import ValidationError
 from langchain import PromptTemplate, chains
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain_community.chat_models import ChatOpenAI
+
 from rmrkl import ChatZeroShotAgent, RetryAgentExecutor
 from dotenv import load_dotenv
 from typing import Optional
+import openai
 
 from .prompts import *
 from .tools import make_tools, make_safety_tools
@@ -13,7 +14,7 @@ from .tools import make_tools, make_safety_tools
 
 def _make_llm(model, temp, api_key, streaming: bool = False):
     if model.startswith("gpt-3.5-turbo") or model.startswith("gpt-4"):
-        llm = ChatOpenAI(
+        llm = langchain.chat_models.ChatOpenAI(
             temperature=temp,
             model_name=model,
             request_timeout=1000,
@@ -124,9 +125,9 @@ class SafetyCrow:
                 agent=ChatZeroShotAgent.from_llm_and_tools(
                     self.llm,
                     tools,
-                    suffix=SAFETY_SUFFIX,
+                    suffix=SUFFIX,
                     format_instructions=SAFETY_FORMAT_INSTRUCTIONS,
-                    question_prompt=SAFETY_INSTRUCTIONS,
+                    question_prompt=SAFETY_QUESTIONS,
                 ),
                 verbose=True,
                 max_iterations=max_iterations,
@@ -138,6 +139,20 @@ class SafetyCrow:
 
             self.rephrase_chain = chains.LLMChain(prompt=rephrase, llm=self.llm)
 
-        def run(self, prompt):
-            outputs = self.agent_executor({"input": prompt})
+        def run(self, query):
+            openai.api_key='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'
+
+            completion = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo", 
+                messages=[
+                            {"role": "system", "content": "Your task is to parse the user question from the input so it can be passed onto another system. \
+                                                            You must include the chemical they ask about. The user will be asking a question about chemistry. \
+                                                            The user might provide a name, a SMILES string, a CAS number, or an IUPAC name. You must parse this information"}, 
+                            {"role": "user", "content": f"{query}"}
+                        ]
+            )
+            print(query)
+            query = completion.choices[0].message.content
+
+            outputs = self.agent_executor({"input": query})
             return outputs['output']
