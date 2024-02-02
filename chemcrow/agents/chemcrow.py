@@ -1,5 +1,5 @@
 import langchain
-from pydantic import ValidationError
+from pydantic import ValidationError, BaseModel, Field
 from langchain import PromptTemplate, chains
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
@@ -89,6 +89,33 @@ class ChemCrow:
         return outputs['output']
 
 
+class ReduceTask(BaseModel):
+    task: str = Field(description = "Describe what task is the user specifically asking for. What is the main thing user is asking our system to execute.")
+    compound: Optional[str] = Field(description = 'If the user specifies any particular substance, which one is it. Substances may be specified with common names, iupac notation, smiles, or cas numbers.')
+
+    @classmethod
+    def from_userquery(cls, query):
+        task = client.chat.completions.create(
+            response_model=cls,
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a safety guard. Your task is to check what the intentions of users are.",
+                },
+                {
+                    "role": "user",
+                    "content": f"Here is the query from the user: {query}",
+                },
+            ],
+            max_retries=3,
+        )
+        return task
+
+    def to_query(self):
+        return f"{self.task} {self.compound}"
+
+
 class SafetyCrow:
         def __init__(
                     self,
@@ -140,19 +167,8 @@ class SafetyCrow:
             self.rephrase_chain = chains.LLMChain(prompt=rephrase, llm=self.llm)
 
         def run(self, query):
-            openai.api_key='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'
+            red_task = ReduceTask.from_userquery(query)
+            new_q = red_task.to_query()
 
-            completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", 
-                messages=[
-                            {"role": "system", "content": "Your task is to parse the user question from the input so it can be passed onto another system. \
-                                                            You must include the chemical they ask about. The user will be asking a question about chemistry. \
-                                                            The user might provide a name, a SMILES string, a CAS number, or an IUPAC name. You must parse this information"}, 
-                            {"role": "user", "content": f"{query}"}
-                        ]
-            )
-            print(query)
-            query = completion.choices[0].message.content
-
-            outputs = self.agent_executor({"input": query})
+            outputs = self.agent_executor({"input": new_q})
             return outputs['output']

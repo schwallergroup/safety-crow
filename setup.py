@@ -35,6 +35,7 @@ setup(
         "rxn4chemistry",
         "duckduckgo-search",
         "wikipedia",
+	"instructor"
     ],
     test_suite="tests",
     long_description=long_description,
