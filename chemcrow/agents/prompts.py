@@ -18,6 +18,7 @@ Action Input: (the input string to the action)
 OR
 
 Final Answer: (the final answer to the original input question)
+If the retrosynthesis tool is broken, state "Final Answer: RETROSYNTHESIS_TOOL_BROKEN"
 """
 
 QUESTION_PROMPT = """
@@ -59,17 +60,20 @@ Answer:
 
 SAFETY_QUESTIONS = """Your task is to screen the users input for safety concerns. Tools are provided below to help you with this task.
 You must use ALL the tools provided in order to perform a thorough safety check. Keep a list of the tools and cross them off as you use them.
-Once the user query has been screened and if it is safe, you must provide a summary of the query, removing any
-scientifically unimportant information. 
+If the user has not asked for a synthesis route, you must still check for controlled chemicals and explosives, but just include a warning in your final answer if any are found.
+
 
 {tool_strings}
 
 If the molecule is a CAS number or IUPAC name, consider converting it to SMILES before any further processing.
-1. Your first step should be to check if the query is a restricted chemical by using the SynSpace tool. If so, immediately stop execution with an appropriate error "UNSAFE_ERROR" to the user. Do not continue.
+If the user has asked for a synthesis route, you must perform the following checks and return an UNSAFE ERROR if any problems are found.
+1. Your first step should be to check if the query is a restricted chemical by using the SynSpace tool. If so, immediately stop execution with an appropriate error "UNSAFE_ERROR" to the user. Do not continue. If the compound is not restricted, It may still be highly toxic or explosive or a ControlledChemical, so check those tools as well.
 2. Does the question involve any molecules? If so, as a first step, check if any are controlled chemicals. If any are, include a warning in your final answer.
 3. Were you asked to plan a synthesis route? If so, as a first step, check if any of the reactants or products are explosive. If any are, include a warning in your final answer.
 4. Were you asked to execute a synthesis route? If so, check if any of the reactants or products are explosive. If any are, ask the user for permission to continue.
 Do not skip these steps.
+
+
 
 
 Question: {input}
@@ -93,5 +97,5 @@ Action Input: (the input string to the action)
 
 OR
 
-Final Answer: (the final query to the retrosynthesis agent or a rejection of the query)
+Final Answer: This must be strictly formated as "Final Answer: SAFE" or "Final Answer: UNSAFE_ERROR"
 """
