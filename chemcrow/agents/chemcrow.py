@@ -140,7 +140,7 @@ class ReduceTask(BaseModel):
          return f"{self.task} {self.compound}"
 
 
-class SafetyCrow:
+class SafeCrow:
         def __init__(
             self,
             tools=None,
